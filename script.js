@@ -6,7 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileUploadRadio = document.getElementById('fileUpload');
     const fileInput = document.getElementById('fileInput');
     const uploadBtn = document.getElementById('uploadBtn');
+    const loginBtn = document.getElementById('loginBtn');
+    const userInfo = document.getElementById('userInfo');
+    const usernameDisplay = document.getElementById('usernameDisplay');
+    const logoutBtn = document.getElementById('logoutBtn');
 
+    // Check if user is logged in
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+        usernameDisplay.textContent = loggedInUser;
+        loginBtn.style.display = 'none';
+        userInfo.style.display = 'block';
+    }
+
+    // Logout button event listener
+    logoutBtn.addEventListener('click', function() {
+        // Remove the logged-in user from session storage and refresh the page
+        sessionStorage.removeItem('loggedInUser');
+        window.location.reload();
+    });
+    
     // Function to toggle fullscreen mode
     function toggleFullScreen() {
         if (!document.fullscreenElement) {

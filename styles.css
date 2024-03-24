@@ -52,3 +52,25 @@ main {
     width: 25px;
     height: 25px;
 }
+
+.login-container {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#userArea {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#userArea #userInfo {
+    display: none; /* Will be shown only when the user is logged in */
+}
+
+#userArea #userInfo span {
+    margin-right: 10px;
+}
