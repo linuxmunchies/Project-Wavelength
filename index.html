@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Wavelength</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Project Wavelength</h1>
+    </header>
+    <main>
+        <div id="playerWindow">
+            <p>Player window will be here</p>
+            <!-- Fullscreen button using the icon -->
+            <button id="fullscreenBtn">
+                <img src="icons/fullscreen.png" alt="Fullscreen">
+            </button>
+        </div>
+
+        <!-- Section for selecting sound input source -->
+        <section id="inputSelection">
+            <h2>Select Input Source</h2>
+            <div>
+                <input type="radio" id="liveInput" name="soundSource" value="live" checked>
+                <label for="liveInput">Live Input (Microphone)</label>
+            </div>
+            <div>
+                <input type="radio" id="fileUpload" name="soundSource" value="upload">
+                <label for="fileUpload">Upload File</label>
+                <!-- File input, to be shown when 'Upload File' is selected -->
+                <input type="file" id="fileInput" name="uploadedFile" hidden>
+                <button id="uploadBtn" style="display:none;">Select File</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
