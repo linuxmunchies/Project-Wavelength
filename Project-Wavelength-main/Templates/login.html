@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Project Wavelength</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <main class="login-container">
+        <form id="loginForm" method="post" action="{{ url_for('sign_in') }}"">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            {% if errorMsg %}
+                <br>
+                <p>{{ errorMsg }}</p>
+            {% endif %}
+            
+            <button type="submit">Login</button>
+            <br>
+            <p>Don't have an account yet?</p>
+            <button type="submit"><a href="{{url_for('sign_up')}}">Sign Up</a></button>
+        </form>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

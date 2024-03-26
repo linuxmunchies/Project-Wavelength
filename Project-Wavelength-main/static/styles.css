@@ -1,0 +1,111 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 10px 20px; /* Slimmer padding for a cleaner look */
+    text-align: center;
+    display: flex; /* Flex layout for aligning elements */
+    justify-content: space-between; /* Space between header elements */
+    align-items: center; /* Vertically center the items */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px; /* Adjusted for a balanced look */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+#playerWindow {
+    position: relative;
+    width: 60%;
+    height: 300px;
+    background-color: #F0F0F0;
+    margin-bottom: 20px;
+    border: 2px solid #CCCCCC;
+}
+
+#inputSelection {
+    text-align: center;
+}
+
+#inputSelection h2 {
+    margin-bottom: 10px;
+}
+
+#inputSelection div {
+    margin: 5px 0;
+}
+
+#fullscreenBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: transparent;
+}
+
+#fullscreenBtn img {
+    width: 25px;
+    height: 25px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#userArea {
+    display: flex;
+    align-items: center;
+}
+
+#userArea #userInfo {
+    display: none; /* Will be shown only when the user is logged in */
+}
+
+#userArea #userInfo span {
+    margin-right: 10px;
+    font-size: 0.9em; /* Font size for username display */
+}
+
+button.login-button,
+button.logout-button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: transparent;
+}
+
+button.login-button:hover,
+button.logout-button:hover {
+    text-decoration: underline;
+}
+
+/* Additional button styles if needed */
+button.login-button {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+button.logout-button {
+    background-color: #dc3545;
+    color: #ffffff;
+}
