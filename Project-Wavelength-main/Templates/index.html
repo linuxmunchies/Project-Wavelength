@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Wavelength</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <header class="top-bar">
         <h1>Project Wavelength</h1>
         <div id="userArea" class="user-area">
-            <button id="loginBtn" class="login-button"><a href="{{url_for('user_logout_confirmation')}}">Log out</a></button>
+            <button id="loginBtn" class="login-button"><a href="logoutConfirmation.html">Log out</a></button>
             <div id="userInfo" class="user-info" style="display: none;">
                 <span id="usernameDisplay" class="username-display"></span>
                 <button id="logoutBtn" class="logout-button">Logout</button>
@@ -50,6 +50,6 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script src="../static/script.js"></script>
 </body>
 </html>
