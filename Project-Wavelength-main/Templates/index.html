@@ -4,30 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Wavelength</title>
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="indexStyles.css">
 </head>
 <body>
-    <header class="top-bar">
-        <h1>Project Wavelength</h1>
-        <div id="userArea" class="user-area">
-            <button id="loginBtn" class="login-button"><a href="logoutConfirmation.html">Log out</a></button>
-            <div id="userInfo" class="user-info" style="display: none;">
-                <span id="usernameDisplay" class="username-display"></span>
-                <button id="logoutBtn" class="logout-button">Logout</button>
-            </div>
+<header class="top-bar">
+    <h1>Project Wavelength</h1>
+    <div id="userArea" class="user-area">
+        <button id="loginBtn" class="login-button"><a href="logoutConfirmation.html">Log out</a></button>
+        <div id="userInfo" class="user-info" style="display: none;">
+            <span id="usernameDisplay" class="username-display"></span>
+            <button id="logoutBtn" class="logout-button">Logout</button>
         </div>
-    </header>
-    <main>
-        <div id="playerWindow">
-            <p>Player window will be here</p>
-            <!-- Fullscreen button using the icon -->
-            <button id="fullscreenBtn">
-                <img src="https://i.redd.it/4qkvhmq42zt41.png" alt="Fullscreen">
-            </button>
-        </div>
-
-        <!-- Section for selecting sound input source -->
-        <section id="inputSelection">
+    </div>
+</header>
+<main>
+    <div class="content-area">
+        <section class="bottom-bar" id="inputSelection">
             <h2>Select Input Source</h2>
             <div>
                 <input type="radio" id="liveInput" name="soundSource" value="live" checked>
@@ -36,20 +28,23 @@
             <div>
                 <input type="radio" id="fileUpload" name="soundSource" value="upload">
                 <label for="fileUpload">Upload File</label>
-                <!-- File input, to be shown when 'Upload File' is selected -->
                 <input type="file" id="fileInput" name="uploadedFile" hidden>
                 <button id="uploadBtn" style="display:none;">Select File</button>
-
-                <!-- File upload form -->
                 <form id="fileUploadForm" enctype="multipart/form-data">
                     <input type="file" id="fileUploadButton" name="file" accept=".mp3"><br>
                 </form>
                 <button onclick='UploadFile()' id="submitFile">Upload</button>
             </div>
         </section>
-    </main>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="../static/script.js"></script>
+        <div id="playerWindow">
+            <p>Player window will be here</p>
+            <button id="fullscreenBtn">
+                <img src="https://i.redd.it/4qkvhmq42zt41.png" alt="Fullscreen">
+            </button>
+        </div>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="../static/script.js"></script>
 </body>
 </html>

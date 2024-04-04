@@ -1,0 +1,62 @@
+/* Set the background of the entire page */
+body {
+    background-image: url('LoginBackground.jpeg'); /* Adjust the path as necessary */
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+}
+
+
+/* Style the login container */
+.login-container {
+    background-image: linear-gradient(to right, #6a3093, #a044ff);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Style the form inside the login container */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style inputs */
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Style the buttons */
+#loginForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #6a3093;
+    font-weight: bold;
+}
+
+#loginForm button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Additional styling for the error message, if any */
+#loginForm p {
+    color: #ffcccb; /* Light red color for error messages */
+}

@@ -1,0 +1,69 @@
+/* Set the background of the entire page */
+body {
+    background-image: url('loginbackground.jpeg'); /* Adjust the path as necessary */
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+}
+
+/* Style the login container */
+.login-container {
+    background-image: linear-gradient(to right, #6a3093, #a044ff);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 300px; /* Keep it as a square or adjust as necessary */
+    height: auto; /* Adjust height automatically based on content */
+}
+
+/* Style the form inputs and labels */
+#loginForm label {
+    color: #fff; /* Ensure labels are visible against the gradient */
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%; /* Ensure inputs fill the form */
+}
+
+#loginForm button,
+#loginForm button a {
+    padding: 10px;
+    border: 1px solid transparent; /* Add this if your button has no border */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #6a3093;
+    font-weight: bold;
+    text-decoration: none;
+    display: block; /* Use block to apply full width */
+    width: calc(100% - 20px); /* Adjust width if there's padding */
+    box-sizing: border-box; /* Include padding and border in the element's dimensions */
+    text-align: center;
+    margin: auto; /* Center the button if needed */
+}
+
+#loginForm button a {
+    display: inline-block; /* Allow the anchor to size with its content */
+    width: auto; /* Let the anchor size itself */
+}
+
+
+/* Error message styling */
+#loginForm p {
+    color: #ffcccb; /* Light red for errors */
+}

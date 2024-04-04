@@ -1,0 +1,149 @@
+/* Extend the background style to the entire body */
+body {
+    background-image: url('loginbackground.jpeg'); /* Adjust the path as necessary */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.top-bar {
+    background-image: linear-gradient(to right, #6a3093, #a044ff);
+    padding: 10px 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the title and user area */
+    align-items: center; /* Center items vertically */
+}
+
+.top-bar h1 {
+    margin: 0;
+    color: white;
+    flex: 1; /* Allows title to take necessary space */
+}
+
+.user-area {
+    display: flex;
+    gap: 10px; /* Spacing between items */
+}
+
+/* Style buttons to match the theme */
+button {
+    background-color: #fff;
+    color: #6a3093;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Style the user info section */
+.user-info {
+    background: #6a3093;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Style for the main content area */
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* This will align items to the top */
+    justify-content: space-between; /* This will add equal spacing between child elements */
+    width: 100%;
+    padding: 20px; /* Adjust padding to maintain spacing from the edges of the viewport */
+    gap: 20px; /* Space between the two elements */
+    border-radius: 5px;
+
+}
+
+#playerWindow {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 70%; /* Adjusted for flex layout */
+    height: 80vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    flex-grow: 1; /* Allows the player window to grow and fill the space */
+}
+
+/* Adjusted bottom bar as a side panel */
+.bottom-bar {
+    background-image: linear-gradient(to right, #6a3093, #a044ff);
+    color: white;
+    padding: 20px 10px;
+    width: 200px; /* Adjust the width as necessary */
+    height: 86vh;
+    margin-right: 20px; /* This adds space between the input selection and the player window */    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the items */
+    border-radius: 5px;
+
+}
+
+.bottom-bar h2,
+.bottom-bar div {
+    width: 100%; /* Make sure the children occupy the full width of the .bottom-bar */
+    padding: 10px 0; /* Give some vertical padding */
+    box-sizing: border-box;
+    display: block; /* Stack the children vertically */
+}
+
+.bottom-bar button,
+.bottom-bar label,
+.bottom-bar input[type="radio"],
+.bottom-bar input[type="file"] {
+    margin-bottom: 10px; /* Add space below each element */
+}
+
+/* Fullscreen button image */
+#fullscreenBtn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Style adjustments for inputs and labels */
+input[type="radio"],
+input[type="file"] {
+    margin-right: 10px;
+}
+
+label {
+    color: white;
+}
+
+/* Adjustments for hidden file input and upload button */
+#fileInput,
+#fileUploadButton {
+    display: none;
+}
+
+/* Style the Upload button to match the theme */
+#submitFile {
+    background-color: #fff;
+    color: #6a3093;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+

@@ -1,0 +1,49 @@
+/* Set the background of the entire page */
+body {
+    background-image: url('loginbackground.jpeg'); /* Adjust the path as necessary */
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+}
+
+/* Style the login container */
+.login-container {
+    background-image: linear-gradient(to right, #6a3093, #a044ff);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 300px; /* Keep it as a square or adjust as necessary */
+    height: auto; /* Adjust height automatically based on content */
+}
+
+/* Style the buttons and links */
+.login-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #6a3093;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login-container button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    color: #fff; /* Ensure the heading is visible against the background */
+    text-align: center;
+}
