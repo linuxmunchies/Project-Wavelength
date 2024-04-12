@@ -1,3 +1,5 @@
+import { Wave } from "@foobar404/wave";
+
 document.addEventListener('DOMContentLoaded', function() {
     // Select the player window and fullscreen button elements
     const playerWindow = document.getElementById('playerWindow');
