@@ -1,3 +1,5 @@
+import { Wave } from "../../node_modules/@foobar404/wave";
+
 document.addEventListener('DOMContentLoaded', function() {
     // Select the player window and fullscreen button elements
     const playerWindow = document.getElementById('playerWindow');
@@ -11,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const usernameDisplay = document.getElementById('usernameDisplay');
     const logoutBtn = document.getElementById('logoutBtn');
     const submitFile = document.getElementById('submitFile');
+
+    // Wave.js defines
+    let audioInput = document.querySelector('audioInput');
+    let visualizerWindow = document.querySelector('visualSpace');
+    let wave = new Wave(audioInput, visualizerWindow);
 
     // Check if user is logged in
     const loggedInUser = sessionStorage.getItem('loggedInUser');
@@ -79,6 +86,21 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add additional logic here if needed, e.g., displaying the file name somewhere on the page
         }
     });
+    /*  TODO: add process to change audio input based on user choice */
+
+    // Wave.js stuff
+    /*  
+    Available wave animations:
+        Arcs, Circles, Cubes, Flower, Glob, Lines, Shine, Square, Turntable, Wave
+    */
+    wave.addAnimation(
+        new wave.animations.Wave({
+            lineColor: 'white',
+            lineWidth: 8,
+            fillColor: 'purple'
+        }
+    ));
+
 });
 
 function UploadFile() {

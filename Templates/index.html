@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Wavelength</title>
+    <script type="text/javascript" nonce="2a4a789f84c1402cb3244ce0cd8" src="//local.adguard.org?ts=1713381950617&amp;type=content-script&amp;dmn=cdn.discordapp.com&amp;url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F1204503605374226453%2F1230250951412027484%2Findex.html%3Fex%3D6632a37b%26is%3D66202e7b%26hm%3De87dca814bb82162d740858f565e90112a48e39615c252f9adc5b3d369c011cb%26&amp;app=vivaldi.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script>
+<script type="text/javascript" nonce="2a4a789f84c1402cb3244ce0cd8" src="//local.adguard.org?ts=1713381950617&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;name=Web%20of%20Trust&amp;type=user-script"></script><script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.js"></script>
     <link rel="stylesheet" href="indexStyles.css">
 </head>
 <body>
@@ -38,13 +40,53 @@
         </section>
         <div id="playerWindow">
             <p>Player window will be here</p>
+            <canvas id="visualSpace"></canvas>
+            <audio controls style="width:50%;">
+                <source src="../defaultaudio/14 - burger ink - Elvism.mp3" type="audio/mp3" id="audioInput">
+            </audio>
             <button id="fullscreenBtn">
                 <img src="https://i.redd.it/4qkvhmq42zt41.png" alt="Fullscreen">
             </button>
+        </body>
+        <script>
+            let canvas = document.querySelector("canvas");
+            let audio = document.querySelector("audio");
+
+            canvas.width = window.innerWidth * 0.5;
+            canvas.height = window.innerHeight * 0.5;
+
+            let wave = new Wave(audio, canvas);
+
+            /*
+            **Wave animation**
+            
+            wave.addAnimation(
+                new wave.animations.Wave({
+                    lineColor: "white",
+                    lineWidth: 10,
+                    fillColor: {gradient: ["#a929ff", "#a929ff", "#ff29f8"]},
+                    mirroredX: true,
+                    count: 5,
+                    rounded: true,
+                    frequencyBand: "base",
+                })
+            );
+            */
+            wave.addAnimation(
+                new wave.animations.Cubes({
+                    count:60,
+                    cubeHeight: 10,
+                    fillColor: {gradient: ["#a929ff", "#a929ff", "#ff29f8"]},
+                    lineColor: "rgba(0,0,0,0)",
+                    radius: 3,
+                })
+            );
+
+        </script>
         </div>
     </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="../static/script.js"></script>
+<script src="../static/script.js" type="module"></script>
 </body>
 </html>
