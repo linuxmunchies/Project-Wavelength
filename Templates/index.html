@@ -25,7 +25,31 @@
         <section class="bottom-bar" id="inputSelection">
             <h2>Select Input Source</h2>
             <div>
-                <input type="radio" id="liveInput" name="soundSource" value="live" checked>
+                <input type="radio" id="defaultSongs" name="soundSource" value="stored" checked>
+                <label for="defaultSongs">Default Songs</label>
+                <select id="defaultSongChange">
+                    <!--Dude this looks so bad.-->
+                    <option value="opt1" selected>Johnny Cash - Hurt</option>
+                    <option value="opt2">Flying Lotus - Using What You Got</option>
+                    <option value="opt3">Tracy Lawrence - Paint Me a Birmingham</option>
+                    <option value="opt4">Aphex Twin - Polynomial-C</option>
+                    <option value="opt5">Home - Resonance</option>
+                    <option value="opt6">Sean Paul - Temperature</option>
+                    <option value="opt7">Justin Timberlake - Until the End of Time</option>
+                    <option value="opt8">Lsdream - ETERNAL NOW</option>
+                    <option value="opt9">Moby - Now I Let it Go</option>
+                    <option value="opt10">Bohren & Der Club of Gore - Karin</option>
+                    <option value="opt11">猫シCorp. - 【Twin Palms】</option>
+                    <option value="opt12">deadmau5 - I Remember</option>
+                    <option value="opt13">haircuts for men - 呪われた思い出</option>
+                    <option value="opt14">burger ink - Elvism</option>
+                    <option value="opt15">PinkPantheress - Break It Off (Bonus)</option>
+                    <option value="opt16">Foo Fighters - The Pretender</option>
+                </select>
+                <button id="changeSong">Change Song!</button>
+            </div>
+            <div>
+                <input type="radio" id="liveInput" name="soundSource" value="live">
                 <label for="liveInput">Live Input (Microphone)</label>
             </div>
             <div>
@@ -40,11 +64,8 @@
             </div>
         </section>
         <div id="playerWindow">
-            <p>Player window will be here</p>
             <canvas id="visualSpace"></canvas>
-            <audio controls style="width:50%;">
-                <source src="../defaultaudio/14 - burger ink - Elvism.mp3" type="audio/mp3" id="audioInput">
-            </audio>
+            <audio id="player" controls style="width:50%;"></audio>
             <button id="fullscreenBtn">
                 <img src="../static/icons/fullscreen.png" alt="Fullscreen">
             </button>
@@ -55,6 +76,38 @@
 
             canvas.width = window.innerWidth * 0.5;
             canvas.height = window.innerHeight * 0.5;
+                
+            /* Default audio source selection */
+            var songSelector = document.getElementById("defaultSongChange");
+            var player = document.getElementById("player");
+            var changeBtn = document.getElementById("changeSong");
+
+            var songList = {
+                "opt1": "../defaultaudio/01 - Johnny Cash - Hurt.mp3",
+                "opt2": "../defaultaudio/02 - Flying Lotus - Using What You Got.mp3",
+                "opt3": "../defaultaudio/03 - Tracy Lawrence - Paint Me A Birmingham.mp3",
+                "opt4": "../defaultaudio/04 - Aphex Twin - Polynomial-C.mp3",
+                "opt5": "../defaultaudio/05 - Home - Resonance.mp3",
+                "opt6": "../defaultaudio/06 - Sean Paul - Temperature.mp3",
+                "opt7": "../defaultaudio/07 - Justin Timberlake - Until the End of Time.mp3",
+                "opt8": "../defaultaudio/08 - Lsdream - ETERNAL NOW.mp3",
+                "opt9": "../defaultaudio/09 - Moby - Now I Let It Go.mp3",
+                "opt10": "../defaultaudio/10 - Bohren & Der Club Of Gore - Karin.mp3",
+                "opt11": "../defaultaudio/11 - 猫 シ Corp. - 【Twin Palms】.mp3",
+                "opt12": "../defaultaudio/12 - deadmau5 - I Remember.mp3",
+                "opt13": "../defaultaudio/13 - haircuts for men - 呪われた思い出.mp3",
+                "opt14": "../defaultaudio/14 - burger ink - Elvism.mp3",
+                "opt15": "../defaultaudio/15 - PinkPantheress - Break It Off (Bonus).mp3",
+                "opt16": "../defaultaudio/16 - Foo Fighters - The Pretender.mp3"
+            }
+            // Default val
+            player.src = songList["opt1"];
+            
+            changeBtn.addEventListener("click", function(){
+                var selectedSong = songSelector.value;
+                var chosenSong = songList[selectedSong];
+                player.src = chosenSong;
+            });
 
             let wave = new Wave(audio, canvas);
 

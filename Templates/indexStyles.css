@@ -85,6 +85,23 @@ main {
     flex-grow: 1; /* Allows the player window to grow and fill the space */
 }
 
+#defaultSongChange {
+    width: 180px;
+    background-color: #fff;
+    color: #6a3093;
+}
+
+#changeSong {
+    background-color: #fff;
+    color: #6a3093;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 /* Adjusted bottom bar as a side panel */
 .bottom-bar {
     background-image: linear-gradient(to right, #6a3093, #a044ff);
