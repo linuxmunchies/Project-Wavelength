@@ -22,8 +22,10 @@ body {
     color: white;
     flex: 1; /* Allows title to take necessary space */
     font-family: 'Orbitron', sans-serif;
+    /*
     animation: colorChange 5s infinite, wobble 1s infinite;
     animation-fill-mode: forwards;
+    */
 }
 
 .user-area {
@@ -72,6 +74,13 @@ main {
     gap: 20px; /* Space between the two elements */
     border-radius: 5px;
 
+}
+
+#DJName {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    animation: colorChange 5s infinite, wobble 1s infinite;
+    animation-fill-mode: forwards;
 }
 
 #playerWindow {
