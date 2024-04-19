@@ -21,6 +21,9 @@ body {
     margin: 0;
     color: white;
     flex: 1; /* Allows title to take necessary space */
+    font-family: 'Orbitron', sans-serif;
+    animation: colorChange 5s infinite, wobble 1s infinite;
+    animation-fill-mode: forwards;
 }
 
 .user-area {
@@ -103,6 +106,7 @@ main {
     padding: 10px 0; /* Give some vertical padding */
     box-sizing: border-box;
     display: block; /* Stack the children vertically */
+    animation: pulseGlow 2s infinite;
 }
 
 .bottom-bar button,
@@ -146,4 +150,23 @@ label {
     margin-top: 10px;
 }
 
+/* Add at the end of the file */
+@keyframes colorChange {
+    0% { color: #FF0000; text-shadow: 0 0 8px #FF0000; }
+    25% { color: #00FF00; text-shadow: 0 0 8px #00FF00; }
+    50% { color: #0000FF; text-shadow: 0 0 8px #0000FF; }
+    75% { color: #FF00FF; text-shadow: 0 0 8px #FF00FF; }
+    100% { color: #FF0000; text-shadow: 0 0 8px #FF0000; }
+}
 
+@keyframes wobble {
+    0%, 100% { transform: translateX(4%) rotate(-0.5deg); }
+    25%, 75% { transform: translateX(1%) rotate(0.5deg); }
+    50% { transform: translateX(4%) rotate(0.5deg); }
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 4px #fff; }
+    50% { text-shadow: 0 0 20px #ff0, 0 0 30px #f00; }
+    100% { text-shadow: 0 0 4px #fff; }
+}
