@@ -25,7 +25,7 @@
         <section class="bottom-bar" id="inputSelection">
             <h2>Select Input Source</h2>
             <div>
-                <input type="radio" id="defaultSongs" name="soundSource" value="stored" checked>
+                <input type="radio" id="defaultSongs" name="soundSource" value="stored" onclick='stopMicInput()' checked>
                 <label for="defaultSongs">Default Songs</label>
                 <select id="defaultSongChange">
                     <!--Dude this looks so bad.-->
@@ -49,11 +49,11 @@
                 <button id="changeSong">Change Song!</button>
             </div>
             <div>
-                <input type="radio" id="liveInput" name="soundSource" value="live">
+                <input type="radio" id="liveInput" name="soundSource" value="live" onclick='getUserAudio()'>
                 <label for="liveInput">Live Input (Microphone)</label>
             </div>
             <div>
-                <input type="radio" id="fileUpload" name="soundSource" value="upload">
+                <input type="radio" id="fileUpload" name="soundSource" value="upload" onclick='stopMicInput()'>
                 <label for="fileUpload">Upload File</label>
                 <input type="file" id="fileInput" name="uploadedFile" hidden>
                 <button id="uploadBtn" style="display:none;">Select File</button>
@@ -66,16 +66,38 @@
         <div id="playerWindow">
             <canvas id="visualSpace"></canvas>
             <audio id="player" controls style="width:50%;"></audio>
-            <button id="fullscreenBtn">
+            <button id="fullscreenBtn" onclick="toggleFullScreen()">
                 <img src="../static/icons/fullscreen.png" alt="Fullscreen">
             </button>
         </body>
         <script>
             let canvas = document.querySelector("canvas");
             let audio = document.querySelector("audio");
+            let stream;
 
             canvas.width = window.innerWidth * 0.5;
             canvas.height = window.innerHeight * 0.5;
+
+            // Function to toggle fullscreen mode
+            function toggleFullScreen() {
+                if (!document.fullscreenElement) {
+                if (playerWindow.requestFullscreen) {
+                    playerWindow.requestFullscreen();
+                } else if (playerWindow.webkitRequestFullscreen) { // Safari
+                    playerWindow.webkitRequestFullscreen();
+                } else if (playerWindow.msRequestFullscreen) { // IE11
+                    playerWindow.msRequestFullscreen();
+                }
+                } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { // Safari
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE11
+                    document.msExitFullscreen();
+                }
+                }
+            }
                 
             /* Default audio source selection */
             var songSelector = document.getElementById("defaultSongChange");
@@ -108,6 +130,30 @@
                 var chosenSong = songList[selectedSong];
                 player.src = chosenSong;
             });
+
+            // WIP, MAY NOT WORK
+            // Developed with help of the example on the Mozilla docs
+            // Source: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Build_a_phone_with_peerjs/Connect_peers/Get_microphone_permission
+            function getUserAudio() {
+                navigator.mediaDevices
+                    .getUserMedia({video: false, audio: true})
+                    .then((stream) => {
+                        window.localStream = stream; // make the window have a MediaStream object attached, as the localStream
+                        window.localAudio.srcObject = stream; //src will be the Media Stream, so it will play.
+                    })
+
+                    .catch((err) => {
+                        console.error(`I'm not gonna sugarcoat it: ${err}`);
+                    });
+            }
+
+            function stopMicInput() {
+                if (stream) {
+                    stream.getTracks().forEach(function(track) {
+                        track.stop();
+                    })
+                }
+            }
 
             let wave = new Wave(audio, canvas);
 
