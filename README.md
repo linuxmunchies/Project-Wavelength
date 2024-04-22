@@ -18,6 +18,8 @@ Project-Wavelength-main/
 ├── Templates/                 # HTML templates for the web interface
 │   ├── index.html             # Main page with visual and audio interaction
 │   └── login.html             # Login page for user authentication
+│   └── logoutConfirmation.html # Logout page 
+│   └── signup.html             # Signup Page
 └── node_modules/              # Node.js modules (not used directly in project deployment)
 ```
 
@@ -37,7 +39,7 @@ To run Project Wavelength locally:
 
 2. **Open and Run**:
    - Open the project folder in VSCode.
-   - Right-click on `index.html` from the `Templates` directory and select "Open with Live Server".
+   - Right-click on `index.html` from the `Templates` directory and select "Open with Live Server". (or whichever you want to see a live render of.)
 
 This setup provides you with a quick way to see changes in real-time without needing a full backend server running, simplifying development and testing.
 
