@@ -51,7 +51,3 @@ This setup provides you with a quick way to see changes in real-time without nee
 ## Acknowledgments
 
 Thank you to the CS499 Keystone course instructors at UAB for their continuous support, and to all team members and contributors who have dedicated time and effort to Project Wavelength.
-
----
-
-This README is designed to provide a clear, updated description of your project with an emphasis on the new development setup and project structure. If there are any specific sections you want to expand upon or adjust, feel free to let me know!
