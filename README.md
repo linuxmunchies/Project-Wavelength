@@ -1,41 +1,55 @@
 # Project Wavelength
 
 ## Overview
-Welcome to the repository for Project Wavelength, an innovative audio-visual experience crafted with precision and creativity. This project is the brainchild of 'Ride the Wave', a dedicated team operating within CS499 Keystone at the University of Alabama at Birmingham (UAB).
 
-Project Wavelength merges the realms of sound and vision, offering an interactive platform where users can engage with dynamically generated visuals driven by live audio inputs or uploaded sound files. Additionally, the project includes user authentication to create a personalized experience.
+Welcome to Project Wavelength, an immersive web experience where audio meets visual art in real-time. Designed by 'Ride the Wave', a passionate team from the University of Alabama at Birmingham, this project allows users to interact with visuals that are dynamically generated based on audio inputs, enhancing the user experience with personalized features.
 
-## Repository Structure
+## Soon-To-Be Future Project Structure
 
-### `/`
-The root directory contains the main files of the web application.
-
-- `index.html` - The entry point of the web application. It hosts the user interface for the visual player and the input selection for sound.
-- `login.html` - The login page that handles user authentication and redirects to the main page upon successful login.
-- `styles.css` - Contains all the styles applied across the web application, ensuring a consistent and visually appealing interface.
-- `script.js` - The JavaScript file that manages the interactivity of the main page, including fullscreen functionality and user session handling.
-- `login.js` - Dedicated to handling the logic for user authentication on the login page.
-
-### `/icons`
-Holds image assets used across the application, such as the fullscreen button icon.
+```
+Project-Wavelength-main/
+│
+├── Main.Py                    # Main script for backend operations (if any)
+├── database.db                # Database file for user and session management
+├── static/                    # Contains all the static content like CSS and JS files
+│   ├── css/                   # CSS files
+│   ├── js/                    # JavaScript files
+│   └── assets/                # Images, icons, and other media files
+├── Templates/                 # HTML templates for the web interface
+│   ├── index.html             # Main page with visual and audio interaction
+│   └── login.html             # Login page for user authentication
+└── node_modules/              # Node.js modules (not used directly in project deployment)
+```
 
 ## Features
 
-- **Dynamic Visual Player**: Central feature displaying interactive visuals that react to sound input.
-- **Input Selection**: Users can choose between live audio input or uploading a sound file for visual generation.
-- **User Authentication**: Includes a basic login/logout system with session storage for user management.
+- **Dynamic Visual Player**: Experience interactive visuals that react to either live audio inputs or pre-uploaded sound files.
+- **Input Selection**: Choose your audio source to see visual effects tailored to the music or sounds you play.
+- **User Authentication**: Manage your sessions with a simple login/logout system ensuring a personalized experience.
 
-## Development Setup
+## Getting Started
 
-To get started with Project Wavelength, clone the repository and either use vscode on the directory, and launch Live Server using the Live Server extension, OR open `index.html` in your browser. (This might work for you, it might not.)
+To run Project Wavelength locally:
 
-For developers:
-- When adding new icons or images, place them within the `/icons` directory to maintain organization.
+1. **Pre-requisites**:
+   - Install Visual Studio Code.
+   - Install the Live Server extension for VSCode.
 
-## License
+2. **Open and Run**:
+   - Open the project folder in VSCode.
+   - Right-click on `index.html` from the `Templates` directory and select "Open with Live Server".
 
-Project Wavelength is licensed under the [MIT License](LICENSE). Feel free to fork and adapt this project for your needs.
+This setup provides you with a quick way to see changes in real-time without needing a full backend server running, simplifying development and testing.
+
+## Development Guidelines
+
+- **Modifications**: When updating HTML, CSS, or JavaScript, ensure changes reflect across all relevant files to maintain consistency.
+- **Testing**: Test new changes locally by reloading the Live Server session in VSCode to ensure all interactions and features perform as expected.
 
 ## Acknowledgments
 
-Special thanks to the CS499 Keystone course instructors at UAB for their guidance, and to all contributors who have invested their time and effort into enhancing Project Wavelength.
+Thank you to the CS499 Keystone course instructors at UAB for their continuous support, and to all team members and contributors who have dedicated time and effort to Project Wavelength.
+
+---
+
+This README is designed to provide a clear, updated description of your project with an emphasis on the new development setup and project structure. If there are any specific sections you want to expand upon or adjust, feel free to let me know!
