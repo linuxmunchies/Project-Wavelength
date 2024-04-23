@@ -35,7 +35,7 @@ To run Project Wavelength locally:
 
 1. **Pre-requisites**:
    - Install Visual Studio Code.
-   - Install the Live Server extension for VSCode.
+   - Install Flask.
 
 2. **Open and Run**:
    - Open the project folder in VSCode.
